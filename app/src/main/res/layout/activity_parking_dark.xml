@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <com.mapbox.mapboxsdk.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        mapbox:mapbox_cameraTargetLat="54.9558"
+        mapbox:mapbox_cameraTargetLng="-7.7343"
+        mapbox:mapbox_styleUrl="mapbox://styles/mapbox/dark-v9"
+        mapbox:mapbox_cameraZoom="14" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/btnParkingNormal"
+        android:text="Normal"
+        android:textColor="#ffff"
+        android:background="@drawable/my_button"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toStartOf="@+id/btnParkingNormal"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btnParkingSatellite"
+        android:text="Satellite"
+        android:textColor="#ffff"
+        android:background="@drawable/my_button"/>
+
+</RelativeLayout>

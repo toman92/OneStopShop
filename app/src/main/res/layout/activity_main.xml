@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.sean.onestopshop.MainActivity">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar" />
+
+    <GridLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/toolbar"
+    android:columnCount="2"
+    android:rowCount="3"
+    android:layout_centerInParent="true"
+    >
+
+        <Button
+            android:id="@+id/btn_weather"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:background="@drawable/my_button"
+            android:text="Weather"
+            android:textColor="#FFFFFF"
+            android:padding="10dp"
+            android:elevation="2dp"
+
+            />
+
+        <Button
+            android:id="@+id/btn_parking"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_row="0"
+            android:layout_rowWeight="1"
+            android:background="@drawable/my_button"
+            android:text="Parking"
+            android:textColor="#FFFFFF"
+            android:padding="10dp"
+            android:elevation="2dp"
+            />
+
+        <Button
+            android:id="@+id/btn_food"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:background="@drawable/my_button"
+            android:text="Food"
+            android:textColor="#FFFFFF"
+            android:padding="10dp"
+            android:elevation="2dp"
+            />
+
+        <Button
+            android:id="@+id/btn_entertain"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_row="1"
+            android:layout_rowWeight="1"
+            android:background="@drawable/my_button"
+            android:text="Activities"
+            android:textColor="#FFFFFF"
+            android:padding="10dp"
+            android:elevation="2dp" />
+
+        <Button
+            android:id="@+id/btn_five"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_row="2"
+            android:layout_rowWeight="1"
+            android:background="@drawable/my_button"
+            android:padding="10dp"
+            android:elevation="2dp"
+            />
+
+        <Button
+            android:id="@+id/btn_six"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="fill"
+            android:layout_row="2"
+            android:layout_rowWeight="1"
+            android:background="@drawable/my_button"
+            android:padding="10dp"
+            android:elevation="2dp" />
+
+    </GridLayout>
+
+</RelativeLayout>

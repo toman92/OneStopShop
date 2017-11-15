@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">One Stop Shop</string>
+    <string name="mapbox_key">pk.eyJ1IjoidG9tYW45MiIsImEiOiJjajllZDFkZXEycHN6MzNxcXNoOTI0dGJyIn0.EvS1oZNtEw5xAC7i8QDLzg</string>
+    <string name="courthouse_desc">Free Parking for 1 hour. €2 for every hour after.</string>
+</resources>
