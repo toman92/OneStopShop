@@ -17,7 +17,7 @@
         mapbox:mapbox_cameraTargetLat="54.9558"
         mapbox:mapbox_cameraTargetLng="-7.7343"
         mapbox:mapbox_styleUrl="mapbox://styles/mapbox/dark-v9"
-        mapbox:mapbox_cameraZoom="14" />
+        mapbox:mapbox_cameraZoom="13" />
 
     <Button
         android:layout_width="wrap_content"

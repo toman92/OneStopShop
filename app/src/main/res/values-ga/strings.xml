@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">One Stop Shop</string>
+    <string name="activities_btn">Gníomhaíochtaí</string>
+    <string name="courthouse_carpark_title">páirc cúirte</string>
+    <string name="courthouse_desc">Páirceáil saor in aisce ar feadh 1 uair an chloig. € 2 in aghaidh gach uair an chloig.</string>
+    <string name="courthouse_snippet">Páirceáil saor in aisce 1 uair an chloig. € 2 in aghaidh na huaire i ndiaidh</string>
+    <string name="courtyard_snippet">Páirceáil saor in aisce 1 uair an chloig. € 2 in aghaidh na huaire i ndiaidh</string>
+    <string name="dillons_snippet">Páirceáil saor in aisce 1 uair an chloig. € 2 in aghaidh na huaire i ndiaidh</string>
+    <string name="justice_snippet">Páirceáil saor in aisce 1 uair an chloig. € 2 in aghaidh na huaire i ndiaidh</string>
+    <string name="parking_btn">Páirceáil</string>
+    <string name="parking_activity_title">Páirceáil</string>
+    <string name="weather_activity_title">Aimsir</string>
+    <string name="weather_btn">Aimsir</string>
+    <string name="weather_location">Leitir Ceanainn, Dún na nGall</string>
+    <string name="wild_atlantic_activity_title">Slí an Atlantaigh Fiáin</string>
+    <string name="wild_atlantic_btn">Atlantach Fiáin</string>
+    <string name="go_lk_site_btn">Láithreán \nGréasáin \nLeitir Ceanainn</string>
+    <string name="dining_btn">Bialann</string>
+    <string name="justice_carpark_title">Páirc Chárta Walsh</string>
+    <string name="current_location_snippet">Tá tú anseo!!!</string>
+    <string name="current_location_title">Suíomh reatha</string>
+    <string name="courtyard_carpark_title">páirc pháirceála</string>
+    <string name="dillons_carpark_title">páirceanna dillons</string>
+</resources>

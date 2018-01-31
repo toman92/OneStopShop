@@ -9,6 +9,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -56,23 +58,38 @@ public class ParkingSatelliteActivity extends AppCompatActivity implements Googl
 
                 mapboxMap.addMarker(new MarkerOptions()
                         .position(new LatLng(54.950672, -7.735915 ))
-                        .title("Dillons Car Park")
-                        .snippet("1 hour free parking. €2 per hour after"));
+                        .title(getString(R.string.dillons_carpark_title))
+                        .snippet(getString(R.string.dillons_snippet)));
 
                 mapboxMap.addMarker(new MarkerOptions()
                         .position(new LatLng(54.951399, -7.734589))
-                        .title("Justice Walsh Car Park")
-                        .snippet("1 hour free parking. €2 per hour after"));
+                        .title(getString(R.string.justice_carpark_title))
+                        .snippet(getString(R.string.justice_snippet)));
 
                 mapboxMap.addMarker(new MarkerOptions()
                         .position(new LatLng(54.951730, -7.734018))
-                        .title("Courthouse Car Park")
-                        .snippet("1 hour free Parking. €2 per hour after"));
+                        .title(getString(R.string.courthouse_carpark_title))
+                        .snippet(getString(R.string.courthouse_snippet)));
 
                 mapboxMap.addMarker(new MarkerOptions()
                         .position(new LatLng(54.948762, -7.735885))
-                        .title("Courtyard Car Park")
-                        .snippet("1 hour free parking. €2 per hour after"));
+                        .title(getString(R.string.courtyard_carpark_title))
+                        .snippet(getString(R.string.courtyard_snippet)));
+
+                mapboxMap.addMarker(new MarkerOptions()
+                        .position(new LatLng(54.951089, -7.739774 ))
+                        .title("Cathedral Car Park")
+                        .snippet("FREE Parking. Max stay 3 hours"));
+
+                mapboxMap.addMarker(new MarkerOptions()
+                        .position(new LatLng(54.951682, -7.741649 ))
+                        .title("Mart Site Car Park")
+                        .snippet("50c per hour. €1 per day"));
+
+                mapboxMap.addMarker(new MarkerOptions()
+                        .position(new LatLng(54.945938, -7.739975 ))
+                        .title("Station Car Park")
+                        .snippet("€1 per hour"));
 
             }
 
@@ -80,7 +97,7 @@ public class ParkingSatelliteActivity extends AppCompatActivity implements Googl
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Parking");
+        getSupportActionBar().setTitle(getString(R.string.parking_activity_title));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_white);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -102,6 +119,30 @@ public class ParkingSatelliteActivity extends AppCompatActivity implements Googl
                 startActivity(parkingDarkIntent);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        switch (id){
+            case R.id.action_english:
+                Toast.makeText(this, "English Clicked", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.action_irish:
+                Toast.makeText(this, "Irish Clicked", Toast.LENGTH_SHORT).show();
+                break;
+        }
+
+        //return true;
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -181,7 +222,7 @@ public class ParkingSatelliteActivity extends AppCompatActivity implements Googl
         if (mLastLocation != null) {
             currentLat = mLastLocation.getLatitude();
             currentLong = mLastLocation.getLongitude();
-            Toast.makeText(this, "Got Last Location", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Got Location", Toast.LENGTH_SHORT).show();
             mapView.getMapAsync(new OnMapReadyCallback() {
 
                 @Override
@@ -190,8 +231,8 @@ public class ParkingSatelliteActivity extends AppCompatActivity implements Googl
 
                     mapboxMap.addMarker(new MarkerOptions()
                             .position(new LatLng(currentLat, currentLong))
-                            .title("Home")
-                            .snippet("Current Location"));
+                            .title(getString(R.string.current_location_title))
+                            .snippet(getString(R.string.current_location_snippet)));
                 }
 
             });

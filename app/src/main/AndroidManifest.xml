@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".MainApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -25,7 +26,11 @@
         <activity android:name=".WeatherActivity" />
         <activity android:name=".ParkingActivity" />
         <activity android:name=".ParkingDarkActivity" />
-        <activity android:name=".ParkingSatelliteActivity"></activity>
+        <activity android:name=".ParkingSatelliteActivity" />
+        <activity android:name=".LkGuideWebActivity" />
+        <activity android:name=".WildAtlanticWayActivity" />
+        <activity android:name=".DiningActivity" />
+        <activity android:name=".ActivitiesActivity"></activity>
     </application>
 
 </manifest>

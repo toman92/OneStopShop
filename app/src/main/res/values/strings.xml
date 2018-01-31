@@ -1,5 +1,25 @@
 <resources>
     <string name="app_name">One Stop Shop</string>
-    <string name="mapbox_key">pk.eyJ1IjoidG9tYW45MiIsImEiOiJjajllZDFkZXEycHN6MzNxcXNoOTI0dGJyIn0.EvS1oZNtEw5xAC7i8QDLzg</string>
+    <string name="mapbox_key" translatable="false">pk.eyJ1IjoidG9tYW45MiIsImEiOiJjajllZDFkZXEycHN6MzNxcXNoOTI0dGJyIn0.EvS1oZNtEw5xAC7i8QDLzg</string>
     <string name="courthouse_desc">Free Parking for 1 hour. €2 for every hour after.</string>
+    <string name="weather_btn">Weather</string>
+    <string name="parking_btn">Parking</string>
+    <string name="dining_btn">Dining</string>
+    <string name="activities_btn">Activities</string>
+    <string name="go_lk_site_btn">LK \nwebsite</string>
+    <string name="dillons_carpark_title">Dillons Car Park</string>
+    <string name="dillons_snippet">1 hour free parking. €2 per hour after</string>
+    <string name="justice_carpark_title">Justice Walsh Car Park</string>
+    <string name="justice_snippet">1 hour free parking. €2 per hour after</string>
+    <string name="courthouse_carpark_title">Courthouse Car Park</string>
+    <string name="courthouse_snippet">1 hour free Parking. €2 per hour after</string>
+    <string name="courtyard_carpark_title">Courtyard Car Park</string>
+    <string name="courtyard_snippet">1 hour free parking. €2 per hour after</string>
+    <string name="parking_activity_title">Parking</string>
+    <string name="current_location_title">Current Location</string>
+    <string name="current_location_snippet">You Are Here!!!</string>
+    <string name="weather_location">Letterkenny, Donegal</string>
+    <string name="weather_activity_title">Weather</string>
+    <string name="wild_atlantic_activity_title">Wild Atlantic Way</string>
+    <string name="wild_atlantic_btn">Wild \nAtlantic\nWay</string>
 </resources>

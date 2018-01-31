@@ -9,8 +9,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -25,22 +24,23 @@ import com.mapbox.mapboxsdk.maps.MapView;
 import com.mapbox.mapboxsdk.maps.MapboxMap;
 import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 
-public class ParkingDarkActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, GoogleApiClient.ConnectionCallbacks{
+public class ActivitiesActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener, GoogleApiClient.ConnectionCallbacks{
 
     private MapView mapView;
     private Location mLastLocation;
-    private Button btnNormal;
+    private Button btnDark;
     private Button btnSatellite;
     private double currentLat;
     private double currentLong;
     private GoogleApiClient mGoogleApiClient;
     private final int MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION = 1;
+    private final String TAG = ParkingActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Mapbox.getInstance(this, getString(R.string.mapbox_key));
-        setContentView(R.layout.activity_parking_dark);
+        setContentView(R.layout.activity_activities);
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -57,57 +57,57 @@ public class ParkingDarkActivity extends AppCompatActivity implements GoogleApiC
             public void onMapReady(MapboxMap mapboxMap) {
 
                 mapboxMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(54.950672, -7.735915 ))
-                        .title(getString(R.string.dillons_carpark_title))
-                        .snippet(getString(R.string.dillons_snippet)));
+                        .position(new LatLng(54.957216, -7.705760 ))
+                        .title("Arena 7 Entertainment Complex")
+                        .snippet("4.4 / 5 Star Public Rating"));
 
                 mapboxMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(54.951399, -7.734589))
-                        .title(getString(R.string.justice_carpark_title))
-                        .snippet(getString(R.string.justice_snippet)));
+                        .position(new LatLng(54.944305, -7.735555))
+                        .title("Century Cinemas")
+                        .snippet("4.4 / 5 Star Public Rating"));
 
                 mapboxMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(54.951730, -7.734018))
-                        .title(getString(R.string.courthouse_carpark_title))
-                        .snippet(getString(R.string.courthouse_snippet)));
+                        .position(new LatLng(54.946064, -7.750091))
+                        .title("Aura Leisure Centre")
+                        .snippet("4.3 / 5 Star Public Rating"));
 
                 mapboxMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(54.948762, -7.735885))
-                        .title(getString(R.string.courtyard_carpark_title))
-                        .snippet(getString(R.string.courtyard_snippet)));
+                        .position(new LatLng(54.964174, -7.684276))
+                        .title("Letterkenny Golf Club")
+                        .snippet("4.7 / 5 Star Public Rating"));
 
                 mapboxMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(54.951089, -7.739774 ))
-                        .title("Cathedral Car Park")
-                        .snippet("FREE Parking. Max stay 3 hours"));
+                        .position(new LatLng(54.944676, -7.761862))
+                        .title("Ballymacool Park")
+                        .snippet("4.5 / 5 Star Public Rating"));
 
                 mapboxMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(54.951682, -7.741649 ))
-                        .title("Mart Site Car Park")
-                        .snippet("50c per hour. €1 per day"));
-
-                mapboxMap.addMarker(new MarkerOptions()
-                        .position(new LatLng(54.945938, -7.739975 ))
-                        .title("Station Car Park")
-                        .snippet("€1 per hour"));
-
+                        .position(new LatLng(54.957803, -7.731130))
+                        .title("Letterkenny Town Park")
+                        .snippet("4.5 / 5 Star Public Rating"));
             }
 
         });
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle(getString(R.string.parking_activity_title));
+        getSupportActionBar().setTitle(R.string.parking_activity_title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_arrow_back_white);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        btnNormal = (Button) findViewById(R.id.btnParkingNormal);
-        btnNormal.setOnClickListener(new View.OnClickListener() {
+        btnDark = (Button) findViewById(R.id.btnParkingDark);
+        btnDark.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent parkingNormalIntent = new Intent(ParkingDarkActivity.this, ParkingActivity.class);
-                startActivity(parkingNormalIntent);
+                Intent parkingDarkIntent = new Intent(ActivitiesActivity.this, ParkingDarkActivity.class);
+                startActivity(parkingDarkIntent);
+                try {
+                    finish();
+                } catch(Exception e) {
+                    Log.e(TAG, e.getMessage());
+                    //e.printStackTrace();
+                }
             }
         });
 
@@ -115,17 +115,10 @@ public class ParkingDarkActivity extends AppCompatActivity implements GoogleApiC
         btnSatellite.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent parkingSatelliteIntent = new Intent(ParkingDarkActivity.this, ParkingSatelliteActivity.class);
+                Intent parkingSatelliteIntent = new Intent(ActivitiesActivity.this, ParkingSatelliteActivity.class);
                 startActivity(parkingSatelliteIntent);
             }
         });
-    }
-
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        Intent mainIntent = new Intent(ParkingDarkActivity.this, MainActivity.class);
-        startActivity(mainIntent);
     }
 
     @Override
@@ -180,14 +173,14 @@ public class ParkingDarkActivity extends AppCompatActivity implements GoogleApiC
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-        if (ContextCompat.checkSelfPermission(ParkingDarkActivity.this, android.Manifest.permission.ACCESS_COARSE_LOCATION)
+        if (ContextCompat.checkSelfPermission(ActivitiesActivity.this, android.Manifest.permission.ACCESS_COARSE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
-            if(android.support.v4.app.ActivityCompat.shouldShowRequestPermissionRationale(ParkingDarkActivity.this,
+            if(android.support.v4.app.ActivityCompat.shouldShowRequestPermissionRationale(ActivitiesActivity.this,
                     android.Manifest.permission.ACCESS_COARSE_LOCATION)) {
 
 
             } else {
-                android.support.v4.app.ActivityCompat.requestPermissions(ParkingDarkActivity.this,
+                android.support.v4.app.ActivityCompat.requestPermissions(ActivitiesActivity.this,
                         new String[]{android.Manifest.permission.ACCESS_COARSE_LOCATION},
                         MY_PERMISSIONS_REQUEST_ACCESS_FINE_LOCATION);
             }
@@ -216,30 +209,6 @@ public class ParkingDarkActivity extends AppCompatActivity implements GoogleApiC
             Toast.makeText(this, "Failed to get last Location", Toast.LENGTH_SHORT).show();
         }
 
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-
-        switch (id){
-            case R.id.action_english:
-                Toast.makeText(this, "English Clicked", Toast.LENGTH_SHORT).show();
-                break;
-
-            case R.id.action_irish:
-                Toast.makeText(this, "Irish Clicked", Toast.LENGTH_SHORT).show();
-                break;
-        }
-
-        //return true;
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
